@@ -1,7 +1,7 @@
 # Tecnologias
- -Angular 7
- -LoopBack 3
- -MySQL
+ - Angular 7
+ - LoopBack 3
+ - MySQL
 
 # Instalação
 ```bash
