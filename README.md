@@ -1,14 +1,17 @@
-Tecnologias
-  Angular 7
-  LoopBack 3
-  MySQL
+# Tecnologias
+ -Angular 7
+ -LoopBack 3
+ -MySQL
 
-Instalação
+# Instalação
+```bash
   api_carros
   npm install
+  ```
 
-Altere datasources.json para suas credenciais:
+- Altere datasources.json para suas credenciais:
 
+```bash
 "mysql": {
     "host": "SEU HOST",
     "port": "SUA PORTA",
@@ -20,17 +23,22 @@ Altere datasources.json para suas credenciais:
     "connector": "mysql",
     "createDatabase": true
   }
+```
 
-SERVER (dentro de api_carros)
+# SERVER (dentro de api_carros)
+```bash
   node server/migrate.js
   node .
+  ````
 
-Acessar api em http://localhost:3000
+- Acessar api em http://localhost:3000
 
-CLIENT (dentro de api_carros)
+# CLIENT (dentro de api_carros)
+```bash
   cd client
   npm install
   ng serve
+  ```
 
-Acessar client em http://localhost:4200
+- Acessar client em http://localhost:4200
 
