@@ -1,0 +1,73 @@
+{
+  "name": "carro",
+  "plural": "carros",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "modelo": {
+      "type": "string",
+      "required": true
+    },
+    "fabricante": {
+      "type": "string",
+      "required": true
+    },
+    "ano": {
+      "type": "number",
+      "required": true,
+      "default": "2000"
+    },
+    "cor": {
+      "type": "string",
+      "required": true
+    },
+    "combustivel": {
+      "type": "string",
+      "required": true,
+      "default": "diesel"
+    },
+    "foto": {
+      "type": "string",
+      "required": true
+    },
+    "linkwebmotors": {
+      "type": "string",
+      "required": true
+    },
+    "oferta": {
+      "type": "boolean",
+      "required": true,
+      "default": "false"
+    },
+    "preco": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

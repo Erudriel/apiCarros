@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "",
+    "port": 3306,
+    "url": "",
+    "database": "api_carros",
+    "password": "",
+    "name": "db",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

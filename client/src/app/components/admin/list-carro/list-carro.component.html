@@ -1,0 +1,42 @@
+<div class="row mt-5">
+  <div class="col">
+    <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalCarro" 
+    (click) = 'resetForm()'>Novo Carro</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Fabricante</th>
+          <th scope="col">Ano</th>
+          <th scope="col">Cor</th>
+          <th scope="col">Combustivel</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Oferta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let carro of carros | paginate: {itemsPerPage: 7, currentPage: pageActual}, let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{carro.modelo}}</td>
+          <td>{{carro.fabricante}}</td>
+          <td>{{carro.ano}}</td>
+          <td>{{carro.cor}}</td>
+          <td>{{carro.combustivel}}</td>
+          <td>R${{carro.preco}}</td>
+          <td>{{carro.oferta == 1 ? 'SIM' : 'NÃO'}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="onPreUpdateCarro(carro)"
+            data-toggle="modal" data-target="#modalCarro">Alterar</button>
+          </td>
+          <td>
+            <a href="/admin/list-carro" class="btn btn-danger" (click)="onDeleteCarro(carro.id)" >Excluir</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+  </div>
+</div>
+
+<app-modal></app-modal>

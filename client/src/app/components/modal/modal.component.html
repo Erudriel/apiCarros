@@ -1,0 +1,61 @@
+<!-- Modal -->
+  <div class="modal fade" id="modalCarro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{this.dataApiService.selectCarro.id ? 'Novo Carro' : 'Atualizar Carro'}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-carro" #formCarro="ngForm" (ngSubmit)="onSaveCarro(formCarro)">
+            <input type="text" id="carroId" name="carroId" class="form-control" [(ngModel)]='this.dataApiService.selectCarro.id'>
+            <div class="form-group">
+              <label for="modelo">Modelo</label>
+              <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" [(ngModel)]='this.dataApiService.selectCarro.modelo'>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="fabricante">Fabricante</label>
+                <select name="fabricante" id="fabricante" class="form-control" [(ngModel)]='this.dataApiService.selectCarro.fabricante'>
+                  <option value="ferrari">Ferrari</option>
+                  <option value="porsche">Porsche</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" class="form-control" placeholder="r$0.00" [(ngModel)]='this.dataApiService.selectCarro.preco'>
+              </div>
+
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="cor">Cor</label>
+                <input type="text" class="form-control" id="cor" name="cor" placeholder="Cor" [(ngModel)]='this.dataApiService.selectCarro.cor'>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="oferta">Oferta</label>
+                <select name="oferta" id="oferta" class="form-control" [(ngModel)]='this.dataApiService.selectCarro.oferta'>
+                  <option value="1">SIM</option>
+                  <option value="0">NÃO</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="foto">Foto</label>
+                <input type="text" name="foto" id="foto" class="form-control" placeholder="Link Foto" [(ngModel)]='this.dataApiService.selectCarro.foto'>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="linkwebmotors">Link WebMotors</label>
+                  <input type="text" name="linkwebmotors" id="linkwebmotors" class="form-control" placeholder="https://webmotors..." [(ngModel)]='this.dataApiService.selectCarro.linkwebmotors'>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Salvar Carro</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

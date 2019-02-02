@@ -1,0 +1,27 @@
+<section id="carros">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+				<div class="card_carros">
+					<div class="card">
+						<div class="card-body text-center">
+							<p>
+								<img class="img-fluid" src="https://dummyimage.com/300x300/000/fff" alt="{{carro.modelo}}">
+							</p>
+							<h4 routerLink="/carro/{{carro.id}}" class="card-title">{{carro.modelo}}</h4>
+							<p class="card-text">
+								Fabricante: {{carro.fabricante}}<br> Ano: {{carro.ano}}<br>Combustivel: {{carro.combustivel}}<br>Cor: {{carro.cor}}<br>
+							</p>
+							<div class="container-preco">
+									<p class="badge badge-primary">
+										R${{carro.preco}}
+									</p>
+								</div>
+							<a (click)="redirect(carro.linkwebmotors)" class="btn btn-primary btn-block" target="_blank">Comprar</a>					
+						</div>						
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
