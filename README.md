@@ -5,28 +5,29 @@ Primeiramente certifique-se de que seu nodejs, angular e loopback estejam atuali
 - https://angular.io/guide/quickstart
 - https://loopback.io/
 
-Certifique-se de ter o xampp instalado para fazer a utilização do mysql no seu localhost
+Certifique-se que o mysql está instalado e funcional em sua máquina
 
-Inicie o xampp na página PhpMyAdmin
+Em sua base rode a seguinte query(sem as aspas):
 
-Crie uma nova base chamada api_carros
-
-em sua base rode a seguinte query(sem as aspas):
-
-"CREATE TABLE carro (
-  id int PRIMARY KEY AUTO_INCREMENT,
-  modelo Varchar(20) NOT NULL,
-  fabricante varchar(20) NOT NULL,
-  ano int(4) NOT NULL DEFAULT 2000,
-  cor varchar(10) NOT NULL,
-  combustivel varchar(10) NOT NULL DEFAULT 'diesel',
-  foto text NOT NULL,
-  linkwebmotors text NOT NULL,
-  oferta boolean NOT NULL DEFAULT false,
-  preco float(10,2) NOT NULL
+"create database api_carros;
+  use api_carros;
+  CREATE TABLE carro (
+   id int PRIMARY KEY AUTO_INCREMENT,
+   modelo Varchar(20) NOT NULL,
+   fabricante varchar(20) NOT NULL,
+    ano int(4) NOT NULL DEFAULT 2000,
+   cor varchar(10) NOT NULL,
+    combustivel varchar(10) NOT NULL DEFAULT 'diesel',
+   foto text NOT NULL,
+   linkwebmotors text NOT NULL,
+   oferta boolean NOT NULL DEFAULT false,
+   preco float(10,2) NOT NULL
   );"
 
-pelo Terminal de Comando acesse o diretório onde esta a api "./apiCarros/client" e a partir de lá digite "ng serve"
-sem as aspas para iniciar nosso host
+Pelo Terminal de Comando acesse o diretório onde esta a api "./apiCarros/client" e a partir de lá digite "npm install" para instalar as dependências.
 
-em seu navegador digite "localhost:4200" sem as aspas para iniciar o acesso ao site
+Após isso no arquivo "datasource.json" certifique-se de ajustar suas credenciais do mysql.
+
+No diretório via terminal "./apiCarros" digite "node ." sem as aspas para iniciar o loopback.
+
+Após isso digite no diretório via terminal "./apiCarros/client" digite "ng serve --open" para iniciar o sistema.
