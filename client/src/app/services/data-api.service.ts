@@ -35,24 +35,24 @@ export class DataApiService {
 	});
 
 	getAllCarros(){
-	const url_api = "http://localhost:3000/api/carros";
+	const url_api = "http://localhost:3000/api/carro";
 	return this.http.get(url_api);
 	}
 
 	getNotOfertas(){
-		const url_api = "http://localhost:3000/api/carros?filter[where][oferta]=0";
+		const url_api = "http://localhost:3000/api/carro?filter[where][oferta]=0";
 		return this.http.get(url_api);
 		}
 
-//http://localhost:3000/api/carros/2
+//http://localhost:3000/api/carro/2
 getCarroById(id: string){
-	const url_api = `http://localhost:3000/api/carros/${id}`;
+	const url_api = `http://localhost:3000/api/carro/${id}`;
 	return(this.carro = this.http.get(url_api));
 
 }
 
 getOfertas(){
-	const url_api = `http://localhost:3000/api/carros?filter[where][oferta]=1`;
+	const url_api = `http://localhost:3000/api/carro?filter[where][oferta]=1`;
 	return (this.carros = this.http.get(url_api));
 }
 
@@ -60,7 +60,7 @@ saveCarro(carro: CarroInterface){
 	//todo: obter token de autenticação
 	//todo: not null
 	let token = this.authService.getToken();
-	const url_api = `http://localhost:3000/api/carros?acces_token=${token}`;
+	const url_api = `http://localhost:3000/api/carro?acces_token=${token}`;
 	return (this.http.post<CarroInterface>(url_api, carro, {headers: this.headers}))
 	.pipe(map(data => data));
 }
@@ -69,7 +69,7 @@ updateCarro(carro: CarroInterface){
 	//todo: obter token de autenticação
 	//todo: not null
 	const token = this.authService.getToken();
-	const url_api = `http://localhost:3000/api/carros`;
+	const url_api = `http://localhost:3000/api/carro?access_token=${token}`;
 	return (this.http.put<CarroInterface>(url_api, {
 		modelo: carro.modelo,
 		fabricante: carro.fabricante,
@@ -90,7 +90,7 @@ deleteCarro(id: string){
 	//todo: not null
 	let token = this.authService.getToken();
 	console.log(id)
-	const url_api = `http://localhost:3000/api/carros/${id}`;
+	const url_api = `http://localhost:3000/api/carro/${id}`;
 	return (this.http.delete<CarroInterface>(url_api, {headers: this.headers}))
 	.pipe(map(data => data));
 }

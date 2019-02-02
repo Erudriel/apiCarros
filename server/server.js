@@ -28,7 +28,7 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
-
+/*
 var appModels = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role'];
 
 var ds = app.dataSources.db;
@@ -48,4 +48,4 @@ ds.autoupdate(schema_v2.name, function (err, result) {
   ds.discoverModelProperties('CUSTOMER_TEST', function (err, props) {
     console.log(props);
   });
-});
+});*/

@@ -1,6 +1,6 @@
 {
-  "name": "carro",
-  "plural": "carros",
+  "name": "Carro",
+  "plural": "Carro",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

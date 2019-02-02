@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body">
           <form class="form-carro" #formCarro="ngForm" (ngSubmit)="onSaveCarro(formCarro)">
-            <input type="text" id="carroId" name="carroId" class="form-control" [(ngModel)]='this.dataApiService.selectCarro.id'>
+            <input type="hidden" id="carroId" name="carroId" class="form-control" [(ngModel)]='this.dataApiService.selectCarro.id'>
             <div class="form-group">
               <label for="modelo">Modelo</label>
               <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" [(ngModel)]='this.dataApiService.selectCarro.modelo'>

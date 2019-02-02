@@ -1,12 +1,14 @@
 {
-  "db": {
-    "host": "",
-    "port": 3306,
+  "db": { "name": "db", "connector": "memory" },
+  "mysql": {
+    "host": "localhost",
+    "port": "3306",
     "url": "",
     "database": "api_carros",
     "password": "",
-    "name": "db",
+    "name": "mysql",
     "user": "root",
-    "connector": "mysql"
+    "connector": "mysql",
+    "createDatabase": true
   }
 }
