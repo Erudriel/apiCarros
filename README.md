@@ -5,7 +5,7 @@
 
 # Instalação
 ```bash
-  api_carros
+  cd api_carros
   npm install
   ```
 
